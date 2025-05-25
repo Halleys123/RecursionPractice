@@ -5,6 +5,7 @@
 #include <ctime>
 
 #include "print_line.h"
+#include "sumOfDigits.h"
 #include "fib.h"
 #include "shortest_grid_path.h"
 #include "fact.h"
@@ -67,6 +68,10 @@ int main()
     printf("Upper case letter = %c\n", uppercaseLetterInString(string));
     print_line();
     printf("Reversed String: %s\n", stringReverse(string));
+    print_line();
+
+    printf("Sum of digits: %d", sumOfDigits(1234));
+
     print_line();
 
     // ? Factorial
