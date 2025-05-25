@@ -17,7 +17,7 @@ int reverse_number(int n, int multiplier, int &max_multiplier)
         return remainder;
     }
 
-    printf("%d %d %d\n", remainder, quotient, multiplier);
+    // printf("%d %d %d\n", remainder, quotient, multiplier);
 
     return reverse_number(quotient, multiplier * 10, max_multiplier) + (remainder * max_multiplier / multiplier);
 }

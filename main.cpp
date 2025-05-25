@@ -16,6 +16,7 @@
 #include "minMaxInArr.h"
 #include "uppercaseLetterInString.h"
 #include "stringReverse.h"
+#include "countZeros.h"
 
 int main()
 {
@@ -72,6 +73,9 @@ int main()
 
     printf("Sum of digits: %d", sumOfDigits(1234));
 
+    print_line();
+
+    printf("Zeros in given Number are: %d", countZeros(100101024));
     print_line();
 
     // ? Factorial
