@@ -17,6 +17,9 @@
 #include "uppercaseLetterInString.h"
 #include "stringReverse.h"
 #include "countZeros.h"
+#include "isSortedArr.h"
+#include "linearSearch.h"
+#include "findAllIndexInArr.h"
 
 int main()
 {
@@ -76,6 +79,30 @@ int main()
     print_line();
 
     printf("Zeros in given Number are: %d", countZeros(100101024));
+    print_line();
+
+    printf("Is sorted Array: %d\n", isSortedArr(arr, 0, arr_size));
+    printf("Is sorted Array: %d\n", isSortedArr(triArr, 0, 5));
+
+    print_line();
+    printf("Finding 7 in array: %d", linearSearch(arr, arr_size, 7));
+    print_line();
+
+    int *tempArr = new int[6];
+    tempArr[0] = 1;
+    tempArr[1] = 2;
+    tempArr[2] = 2;
+    tempArr[3] = 1;
+    tempArr[4] = 2;
+    tempArr[5] = 5;
+    int ansSize = 0;
+
+    int *ansarr = findAllIndexInArr(tempArr, 6, 2, &ansSize);
+    for (int i = 0; i < ansSize; i++)
+    {
+        printf("%d ", ansarr[i]);
+    }
+    printf("\n");
     print_line();
 
     // ? Factorial
