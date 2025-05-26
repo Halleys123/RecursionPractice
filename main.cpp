@@ -22,6 +22,7 @@
 #include "findAllIndexInArr.h"
 #include "stars.h"
 #include "bubbleSortRec.h"
+#include "selectionSort.h"
 
 int main()
 {
@@ -116,7 +117,8 @@ int main()
     barr[3] = 2;
     barr[4] = 1;
 
-    bubbleSortRec(barr, 5);
+    selectionSort(barr, 5);
+    // bubbleSortRec(barr, 5);
     for (int i = 0; i < 5; i++)
     {
         printf("%d ", barr[i]);
