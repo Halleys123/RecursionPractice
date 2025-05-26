@@ -9,6 +9,8 @@ void swap(int &a, int &b)
 
 void selectionSort(int *arr, int size)
 {
+    // This was non recursive method
+    // while(size != 0) {
     if (size == 0)
         return;
     int largest_index = 0;
@@ -21,4 +23,6 @@ void selectionSort(int *arr, int size)
     arr[size - 1] = arr[largest_index];
     arr[largest_index] = temp;
     selectionSort(arr, size - 1);
+    // size -= 1;
+    // }
 }
