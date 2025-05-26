@@ -20,6 +20,8 @@
 #include "isSortedArr.h"
 #include "linearSearch.h"
 #include "findAllIndexInArr.h"
+#include "stars.h"
+#include "bubbleSortRec.h"
 
 int main()
 {
@@ -103,6 +105,22 @@ int main()
         printf("%d ", ansarr[i]);
     }
     printf("\n");
+    print_line();
+    stars(5);
+    stars_rev(5);
+    print_line();
+    int *barr = new int[5];
+    barr[0] = 5;
+    barr[1] = 4;
+    barr[2] = 3;
+    barr[3] = 2;
+    barr[4] = 1;
+
+    bubbleSortRec(barr, 5);
+    for (int i = 0; i < 5; i++)
+    {
+        printf("%d ", barr[i]);
+    }
     print_line();
 
     // ? Factorial
