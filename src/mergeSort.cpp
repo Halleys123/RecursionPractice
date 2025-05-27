@@ -2,9 +2,10 @@
 
 void mergeSort(int *arr, int start, int end)
 {
-    // 3 / 2 = 1
-    // 4 / 2 = 2
-    int middle = (end - start + 1) / 2;
-    mergeSort(arr, start, end - middle); // 0 1
-    mergeSort(arr, start + middle + 1, end);
+    if (start >= end)
+        return;
+
+    int middle = start + (end - start) / 2;
+    mergeSort(arr, start, end + 1 - middle);
+    mergeSort(arr, start + middle, end);
 }
