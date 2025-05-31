@@ -24,6 +24,7 @@
 #include "bubbleSortRec.h"
 #include "selectionSort.h"
 #include "skipLetter.h"
+#include "subset.h"
 
 int main()
 {
@@ -129,6 +130,10 @@ int main()
     std::string s = "bcacbad";
     printf("%s\n", skipLetter(s, s.length() - 1, 'a').c_str());
 
+    print_line();
+    vector<int> sub = {1, 2, 3};
+    vector<int> cur;
+    subset(sub, cur, 0);
     print_line();
 
     // ? Factorial
