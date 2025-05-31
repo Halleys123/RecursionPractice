@@ -26,6 +26,7 @@
 #include "selectionSort.h"
 #include "skipLetter.h"
 #include "subset.h"
+#include "subsetIterative.h"
 
 int main()
 {
@@ -132,17 +133,23 @@ int main()
     printf("%s\n", skipLetter(s, s.length() - 1, 'a').c_str());
 
     print_line();
-    vector<int> sub = {1, 2, 3};
+
+    vector<int> sub = {1, 2, 3, 4, 5, 6};
     vector<int> cur;
-    vector<vector<int>> ansVec = subset(sub, cur, 0);
+
+    vector<vector<int>> ansVec = subsetIterative(sub);
+
+    printf("[");
     for (vector<int> i : ansVec)
     {
+        printf("[");
         for (auto j : i)
         {
             printf("%d ", j);
         }
-        printf("\n");
+        printf("],");
     }
+    printf("]");
     print_line();
 
     // ? Factorial
