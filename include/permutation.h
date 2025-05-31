@@ -4,4 +4,4 @@
 
 using namespace std;
 
-void permutation(string str, string ans, int i = 0);
+vector<string> permutation(string str, string ans, int i = 0);

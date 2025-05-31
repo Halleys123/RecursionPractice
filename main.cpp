@@ -1,6 +1,7 @@
 #include <iostream>
 #include <memory.h>
 #include <vector>
+#include <string>
 
 #include <cstdlib>
 #include <ctime>
@@ -153,8 +154,11 @@ int main()
     printf("]");
     print_line();
 
-    permutation("abc", "");
-
+    std::vector<std::string> ve = permutation("abc", "", 0);
+    for (std::string i : ve)
+    {
+        printf("%s ", i.c_str());
+    }
     // ? Factorial
     // printf("%d", fact(5));
 

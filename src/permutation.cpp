@@ -4,19 +4,20 @@
 #include <iostream>
 
 using namespace std;
-
-void permutation(string str, string ans, int i)
+vector<string> permutation(string str, string ans, int i)
 {
     if (ans.length() == str.length())
     {
-        cout << ans << " ";
-        return;
-        // return {ans};
+        // cout << ans << " ";
+        return {ans};
     }
+
+    vector<string> result;
     for (int j = 0; j <= ans.length(); j++)
     {
         string n = ans.substr(0, j) + str[i] + ans.substr(j, ans.length());
-        permutation(str, n, i + 1);
+        vector<string> temp = permutation(str, n, i + 1);
+        result.insert(result.end(), temp.begin(), temp.end());
     }
-    // return {""};
+    return result;
 }
