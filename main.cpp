@@ -27,6 +27,7 @@
 #include "skipLetter.h"
 #include "subset.h"
 #include "subsetIterative.h"
+#include "permutation.h"
 
 int main()
 {
@@ -151,6 +152,8 @@ int main()
     }
     printf("]");
     print_line();
+
+    permutation("abc", "");
 
     // ? Factorial
     // printf("%d", fact(5));
