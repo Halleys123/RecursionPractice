@@ -23,6 +23,7 @@
 #include "stars.h"
 #include "bubbleSortRec.h"
 #include "selectionSort.h"
+#include "skipLetter.h"
 
 int main()
 {
@@ -123,6 +124,11 @@ int main()
     {
         printf("%d ", barr[i]);
     }
+    print_line();
+
+    std::string s = "bcacbad";
+    printf("%s\n", skipLetter(s, s.length() - 1, 'a').c_str());
+
     print_line();
 
     // ? Factorial

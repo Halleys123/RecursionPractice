@@ -1,3 +1,3 @@
 #pragma once
 
-void quickSort();
+void quickSort(int *arr, int start, int end, int pivot);
