@@ -4,19 +4,18 @@
 
 using namespace std;
 
-void subset(vector<int> &arr, vector<int> cur, int i = 0)
+vector<vector<int>> subset(vector<int> &arr, vector<int> cur, int i)
 {
     if (i == arr.size())
-    {
-        for (int j = 0; j < cur.size(); j++)
-        {
-            printf("%d ", cur[j]);
-        }
-        printf("\n");
-        return;
-    }
+        return {cur};
 
-    subset(arr, cur, i + 1);
+    // Exclude arr[i]
+    vector<vector<int>> res = subset(arr, cur, i + 1);
+
+    // Include arr[i]
     cur.push_back(arr[i]);
-    subset(arr, cur, i + 1);
+    vector<vector<int>> includeRes = subset(arr, cur, i + 1);
+
+    res.insert(res.end(), includeRes.begin(), includeRes.end());
+    return res;
 }

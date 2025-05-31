@@ -1,5 +1,6 @@
 #include <iostream>
 #include <memory.h>
+#include <vector>
 
 #include <cstdlib>
 #include <ctime>
@@ -133,7 +134,15 @@ int main()
     print_line();
     vector<int> sub = {1, 2, 3};
     vector<int> cur;
-    subset(sub, cur, 0);
+    vector<vector<int>> ansVec = subset(sub, cur, 0);
+    for (vector<int> i : ansVec)
+    {
+        for (auto j : i)
+        {
+            printf("%d ", j);
+        }
+        printf("\n");
+    }
     print_line();
 
     // ? Factorial

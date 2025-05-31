@@ -3,4 +3,4 @@
 
 using namespace std;
 
-void subset(vector<int> &, vector<int>, int);
+vector<vector<int>> subset(vector<int> &, vector<int>, int);
