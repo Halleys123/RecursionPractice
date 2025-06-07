@@ -29,6 +29,7 @@
 #include "subset.h"
 #include "subsetIterative.h"
 #include "permutation.h"
+#include "diceThrowTarget.h"
 
 int main()
 {
@@ -159,6 +160,21 @@ int main()
     {
         printf("%s ", i.c_str());
     }
+
+    print_line();
+    vector<int> curSum;
+    printf("[");
+    for (auto i : diceThrowTarget(4, 0, curSum))
+    {
+        printf("[");
+        for (auto j : i)
+        {
+            printf("%d ", j);
+        }
+        printf("] ");
+    }
+    printf("]");
+
     // ? Factorial
     // printf("%d", fact(5));
 
