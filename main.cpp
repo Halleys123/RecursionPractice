@@ -32,6 +32,7 @@
 #include "diceThrowTarget.h"
 #include "CountMaze.h"
 #include "GiveMazePaths.h"
+#include "MazeWithObstacle.h"
 
 int main()
 {
@@ -186,6 +187,17 @@ int main()
         printf("%s ", i.c_str());
     }
     printf("\n");
+    print_line();
+    paths = "";
+    vector<vector<bool>> maze = {
+        {true, true, true},
+        {true, false, true},
+        {true, true, true},
+    };
+    for (auto i : MazeWithObstacle(0, 0, 2, 2, paths, maze))
+    {
+        printf("%s ", i.c_str());
+    }
     // ? Factorial
     // printf("%d", fact(5));
 
