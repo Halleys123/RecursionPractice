@@ -186,30 +186,24 @@ int main()
     {
         printf("%s ", i.c_str());
     }
+
     printf("\n");
     print_line();
     paths = "";
     vector<vector<bool>> maze = {
-        {false, true, true},
-        {true, true, true},
-        {true, true, true},
+        {false, true, true, true, true},
+        {true, true, true, true, false},
+        {true, false, true, true, true},
+        {false, true, true, false, true},
+        {true, false, true, true, true},
     };
-    // for (auto i : MazeWithObstacle(0, 0, 2, 2, paths, maze))
-    // {
-    //     printf("%s ", i.c_str());
-    // }
+    int mazeX = 5, mazeY = 5;
     paths = "";
-    for (auto i : FourDirectionMazeWithObstacle(0, 0, 2, 2, paths, maze))
+    for (auto i : FourDirectionMazeWithObstacle(0, 0, mazeX - 1, mazeY - 1, paths, maze))
     {
-        printf("%s ", i.c_str());
+        printf("%s\n", i.c_str());
+        // pathPrinter(i, mazeX, mazeY);
     }
-    // ? Factorial
-    // printf("%d", fact(5));
-
-    // ? Print Numbers
-    // print_numbers(5);
-    // print_numbers_reverse(5);
-
     delete arr;
     return 0;
 }

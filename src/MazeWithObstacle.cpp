@@ -1,9 +1,14 @@
 #include "MazeWithObstacle.h"
 
 #include <vector>
+#include <iostream>
 #include <string>
 
 using namespace std;
+
+// ! Paste the following in terminal before running this function
+// ! to allow UNICODE characters like arrow (→)
+// chcp 65001
 
 vector<string> MazeWithObstacle(int iX, int iY, int fX, int fY, string cur, vector<vector<bool>> &maze)
 {
@@ -80,4 +85,48 @@ vector<string> FourDirectionMazeWithObstacle(int iX, int iY, int fX, int fY, str
     }
 
     return ans;
+}
+
+void pathPrinter(string path, int fX, int fY)
+{
+    vector<vector<string>> final(fX, vector<string>(fY, " "));
+    int x = 0, y = 0;
+    final[x][y] = 'S'; // Start
+    for (char i : path)
+    {
+        if (i == 'R')
+        {
+            final[x][y] = "→";
+            y += 1;
+        }
+        else if (i == 'L')
+        {
+            final[x][y] = "←";
+            y -= 1;
+        }
+        else if (i == 'U')
+        {
+            final[x][y] = "↑";
+            x -= 1;
+        }
+        else if (i == 'D')
+        {
+            final[x][y] = "↓";
+            x += 1;
+        }
+    }
+    final[x][y] = "E"; // End
+    printf("%s\n", path.c_str());
+    for (int iX = 0; iX < fX; iX++)
+    {
+        for (int iY = 0; iY < fY; iY++)
+        {
+            if (final[iX][iY] == " ")
+                cout << ". ";
+            else
+                cout << final[iX][iY] << " ";
+        }
+        cout << "\n";
+    }
+    cout << "\n";
 }
