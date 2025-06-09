@@ -190,11 +190,16 @@ int main()
     print_line();
     paths = "";
     vector<vector<bool>> maze = {
+        {false, true, true},
         {true, true, true},
-        {true, false, true},
         {true, true, true},
     };
-    for (auto i : MazeWithObstacle(0, 0, 2, 2, paths, maze))
+    // for (auto i : MazeWithObstacle(0, 0, 2, 2, paths, maze))
+    // {
+    //     printf("%s ", i.c_str());
+    // }
+    paths = "";
+    for (auto i : FourDirectionMazeWithObstacle(0, 0, 2, 2, paths, maze))
     {
         printf("%s ", i.c_str());
     }

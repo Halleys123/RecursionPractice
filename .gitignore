@@ -2,3 +2,4 @@ sources.txt
 utils/*
 .exe
 build/*
+*.exe
