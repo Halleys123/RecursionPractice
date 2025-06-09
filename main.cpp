@@ -30,6 +30,8 @@
 #include "subsetIterative.h"
 #include "permutation.h"
 #include "diceThrowTarget.h"
+#include "CountMaze.h"
+#include "GiveMazePaths.h"
 
 int main()
 {
@@ -175,6 +177,15 @@ int main()
     }
     printf("]");
 
+    print_line();
+    printf("Total Number of ways: %d", CountMaze(0, 0, 2, 2));
+    print_line();
+    std::string paths;
+    for (auto i : GiveMazePaths(0, 0, 2, 2, paths))
+    {
+        printf("%s ", i.c_str());
+    }
+    printf("\n");
     // ? Factorial
     // printf("%d", fact(5));
 
