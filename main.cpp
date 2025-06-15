@@ -33,7 +33,8 @@
 #include "CountMaze.h"
 #include "GiveMazePaths.h"
 #include "MazeWithObstacle.h"
-
+#include "nQueen.h"
+#include "sudoku.h"
 int main()
 {
     printf("\n\033[1;32mMain function started\033[0m\n");
@@ -204,6 +205,25 @@ int main()
         printf("%s\n", i.c_str());
         // pathPrinter(i, mazeX, mazeY);
     }
+
+    print_line();
+    int boardSize = 5;
+    vector<vector<bool>> board(boardSize, vector<bool>(boardSize, true));
+    nQueen(board, boardSize, 0);
     delete arr;
+
+    print_line();
+    vector<vector<int>> sudoku = {
+        {5, 3, -1, -1, 7, -1, -1, -1, -1},
+        {6, -1, -1, 1, 9, 5, -1, -1, -1},
+        {-1, 9, 8, -1, -1, -1, -1, 6, -1},
+        {8, -1, -1, -1, 6, -1, -1, -1, 3},
+        {4, -1, -1, 8, -1, 3, -1, -1, 1},
+        {7, -1, -1, -1, 2, -1, -1, -1, 6},
+        {-1, 6, -1, -1, -1, -1, 2, 8, -1},
+        {-1, -1, -1, 4, 1, 9, -1, -1, 5},
+        {-1, -1, -1, -1, 8, -1, -1, 7, 9}};
+    sudokuSolver(sudoku, 0, 0);
+
     return 0;
 }
